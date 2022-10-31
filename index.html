@@ -268,24 +268,24 @@ updateActivity();
     function disableCtrlKeyCombination(e) {
         var forbiddenKeys = new Array("a", "s", "c", "x","u");
         var key;
-        var isCtrl;
+        var Ctrl;
         if (window.event) {
             key = window.event.keyCode;
             //IE
             if (window.event.ctrlKey)
-                isCtrl = true;
+                Ctrl = true;
             else
-                isCtrl = false;
+                Ctrl = false;
         }
         else {
             key = e.which;
             //firefox
             if (e.ctrlKey)
-                isCtrl = true;
+                Ctrl = true;
             else
-                isCtrl = false;
+                Ctrl = false;
         }
-        if (isCtrl) {
+        if (Ctrl) {
             for (i = 0; i < forbiddenKeys.length; i++) {
                 //case-insensitive comparation
                 if (forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase()) {
